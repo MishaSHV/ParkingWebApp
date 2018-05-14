@@ -9,7 +9,7 @@ namespace ParkingWebApp.Models
     {
         public int Id { get; set; }
         public decimal Balance { get; set; }
-        public CarType Ctype { get; set; }
+        public string Ctype { get; set; }
     }
 
     public enum CarType

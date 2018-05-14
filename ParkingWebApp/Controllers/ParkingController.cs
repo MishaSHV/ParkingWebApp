@@ -8,39 +8,33 @@ using Microsoft.AspNetCore.Mvc;
 namespace ParkingWebApp.Controllers
 {
     [Produces("application/json")]
-    [Route("api/[controller]")]
-    public class ParkingController : Controller
+    public class ParkingController : ControllerBase
     {
         // GET: api/Parking
+        //Return number of the free parking spaces
+        [Route("api/Parking")]
+        [Route("api/Parking/Free")]
         [HttpGet]
-        public IEnumerable<string> Get()
+        public int Free()
         {
-            return new string[] { "value1", "value2" };
+            return 10;
         }
 
-        // GET: api/Parking/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        //Return number of the busy parking spaces
+        [Route("api/Parking/Busy")]
+        [HttpGet]
+        public int Busy()
         {
-            return "value";
+            return 20;
         }
-        
-        // POST: api/Parking
-        [HttpPost]
-        public void Post([FromBody]string value)
+
+        //Return total parking profit
+        [Route("api/Parking/Profit")]
+        [HttpGet]
+        public decimal TotalProfit()
         {
+            return 30.0M;
         }
-        
-        // PUT: api/Parking/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-        
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+
     }
 }

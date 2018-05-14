@@ -16,32 +16,34 @@ namespace ParkingWebApp.Controllers
         [HttpGet]
         public IEnumerable<Car> Get()
         {
-            return new Car[] { new Car(){ Id= 1, Balance=23.0M, Ctype=CarType.Bus}, new Car(){ Id = 1, Balance = 340, Ctype = CarType.Motocycle } };
+            return new Car[] { new Car(){ Id= 1, Balance=23.0M, Ctype=CarType.Bus.ToString()}, new Car(){ Id = 1, Balance = 340, Ctype = CarType.Motocycle.ToString() } };
         }
 
         // GET: api/Cars/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{id:int}")]
+        public IActionResult Get(int id)
         {
-            return "value";
+            return Ok(new Car { Id = 1, Balance = 23.0M, Ctype = CarType.Bus.ToString() });
+            //else return NotFound();
         }
-        
+
         // POST: api/Cars
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]Car car)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            return CreatedAtAction("GET", new { id = car.Id, CarType = car.Ctype,  car.Balance }, car);
         }
         
-        // PUT: api/Cars/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
         
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            return NotFound();//return NoContent();//normal
         }
     }
 }
