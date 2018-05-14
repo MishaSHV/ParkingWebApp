@@ -10,44 +10,44 @@ namespace ParkingWebApp.Controllers
 {
     [Produces("application/json")]
     //[Route("api/[controller]")]
-    public class TransactionsController : ControllerBase
+    public class TransactionsController : Controller
     {
+
         // GET: api/Transactions/Log
         //Return Transactions.log
-        [Route("api/Transactios/Log")]
+        [Route("api/Transactions/Log")]
         [HttpGet]
         public IEnumerable<string> Log()
         {
-            return new string[] {};
+            return new string[] {"first transaction", "second transaction" };
         }
 
         // GET: api/Transactions/LastMin
         //Return Transactions for the last minute
-        [Route("api/Transactios/LastMin")]
+        [Route("api/Transactions/LastMin")]
         [HttpGet]
         public IEnumerable<Transaction> LastMin()
         {
-            return new Transaction[] { };
+            return new Transaction[] { new Transaction { DTtransaction = DateTime.Now, CarId = 1, AmountMoney = 10.0M } };
         }
-
 
         // GET: api/Transactions/5
         //Return Transactions for the last minute for the same car
-        [Route("api/Transactios/LastMinCar")]
-        [HttpGet("{id}")]
+        [Route("api/Transactions/LastMinCar/")]
+        [HttpGet("{id:int}")]
         public IEnumerable<Transaction> LastMinCar(int id)
         {
-            return new Transaction[] { };
+            return new Transaction[] { new Transaction { DTtransaction = DateTime.Now, CarId = id, AmountMoney = 20.0M } };
         }
-
 
         // PUT: api/Transactions/5
         //Put money to car balance
-        [Route("api/Transactios")]
-        [HttpPut("{id}")]
+        [Route("api/Transactions/PutMoney")]
+        [HttpPut("{id:int}")]
         public IActionResult PutMoney(int id, [FromBody]decimal value)
         {
-            return NotFound();//return NoContent();//normal
+            //return NotFound();//return NoContent();//normal
+            return Ok($"value:{value} id:{id}");
         }
     }
 }

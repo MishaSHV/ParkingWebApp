@@ -23,7 +23,7 @@ namespace ParkingWebApp.Controllers
         [HttpGet("{id:int}")]
         public IActionResult Get(int id)
         {
-            return Ok(new Car { Id = 1, Balance = 23.0M, Ctype = CarType.Bus.ToString() });
+            return Ok(new Car { Id = id, Balance = 23.0M, Ctype = CarType.Bus.ToString() });
             //else return NotFound();
         }
 
@@ -40,7 +40,7 @@ namespace ParkingWebApp.Controllers
         
         
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
             return NotFound();//return NoContent();//normal
