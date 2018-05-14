@@ -1,0 +1,293 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "defaultTitle",
+    "description" : "defaultDescription",
+    "version" : "0.1-oas3"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:2897"
+  } ],
+  "paths" : {
+    "/api/Transactions/LastMin" : {
+      "get" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "[{\"dTtransaction\":\"2018-05-14T23:03:12.6898517+03:00\",\"carId\":1,\"amountMoney\":10.0}]"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transactions/LastMinCar/" : {
+      "get" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "id=24"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "[{\"dTtransaction\":\"2018-05-14T23:03:54.2898517+03:00\",\"carId\":24,\"amountMoney\":20.0}]"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transactions/Log" : {
+      "get" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "[\"first transaction\",\"second transaction\"]"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/parking/profit" : {
+      "get" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "30.0"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cars/1" : {
+      "get" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"id\":1,\"balance\":23.0,\"ctype\":\"Bus\"}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "default" : {
+            "description" : "Auto generated using Swagger Inspector"
+          }
+        }
+      }
+    },
+    "/api/parking/busy" : {
+      "get" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "20"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/parking/free" : {
+      "get" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "10"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transactions/PutMoney/" : {
+      "put" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "id=23"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "properties" : { }
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "45.0"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "\"value:45 id:23\""
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cars" : {
+      "get" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "responses" : {
+          "200" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "[{\"id\":1,\"balance\":23.0,\"ctype\":\"Bus\"},{\"id\":1,\"balance\":340.0,\"ctype\":\"Motocycle\"}]"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "description" : "Auto generated using Swagger Inspector",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "properties" : {
+                  "Id" : {
+                    "type" : "integer"
+                  },
+                  "Ctype" : {
+                    "type" : "string"
+                  },
+                  "Balance" : {
+                    "type" : "integer"
+                  }
+                }
+              },
+              "examples" : {
+                "0" : {
+                  "value" : "{ \n\"Id\":23,\n\"Ctype\":\"Bus\",\n\"Balance\":25 \n}"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Auto generated using Swagger Inspector",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "examples" : {
+                  "0" : {
+                    "value" : "{\"id\":23,\"balance\":25.0,\"ctype\":\"Bus\"}"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
