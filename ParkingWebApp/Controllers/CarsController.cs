@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ParkingWebApp.Models;
 
 namespace ParkingWebApp.Controllers
 {
@@ -13,9 +14,9 @@ namespace ParkingWebApp.Controllers
     {
         // GET: api/Cars
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Car> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new Car[] { new Car(){ Id= 1, Balance=23.0M, Ctype=CarType.Bus}, new Car(){ Id = 1, Balance = 340, Ctype = CarType.Motocycle } };
         }
 
         // GET: api/Cars/5
